@@ -25,12 +25,15 @@ class Pokemon extends Component {
   	}
 
   	render() {
+  		const {pokemonData, setSelectedPokemon} = this.props;
+  		const {pokemonInfo} = this.state;
+
 	  return (
 	    <div className="pokemon-individual col-3 pb-5">
-	    	<Link to={`/pokemon/${this.props.pokemonData.name}`} onClick={() => this.props.setSelectedPokemon(this.state.pokemonInfo)}>
+	    	<Link to={`/pokemon/${pokemonData.name}`} onClick={() => setSelectedPokemon(pokemonInfo)}>
 		    	<div className="pokemon-container p-5 border rounded">
-			    	{this.state.loaded ? <img className="m-auto d-block pb-3" src={this.state.pokemonInfo.sprites.front_default} /> : <div />}
-					<span className="text-center d-block">{this.props.pokemonData.name}</span>
+			    	{this.state.loaded ? <img className="m-auto d-block pb-3" src={pokemonInfo.sprites.front_default} /> : <div />}
+					<span className="text-center d-block">{pokemonData.name}</span>
 				</div>
 			</Link>
 	    </div>

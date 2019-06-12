@@ -2,11 +2,15 @@ import { connect } from 'react-redux'
 import { setSelectedPokemon } from './actions'
 import PokemonList from './PokemonList'
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapStateToProps = state => ({
+  bag: state.bag
+})
+
+const mapDispatchToProps = dispatch => ({
   setSelectedPokemon: selected => dispatch(setSelectedPokemon(selected))
 })
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(PokemonList)

@@ -7,7 +7,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link to="/">Home</Link>
+        <div className="container">
+        	<div className="row my-5 my-5">
+        		<Link className="button button-primary button-large" to="/">Home</Link>
+        	</div>
+        </div>
         <Route path="/" exact component={PokemonListContainer} />
         <Route path="/pokemon" component={PokemonDetailContainer} />
       </Router>
