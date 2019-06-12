@@ -46,6 +46,8 @@ class PokemonDetail extends Component {
 			removePokemonFromBag,
 			bag} = this.props;
 
+		const {notInBag} = this.state;
+
 		return (
 			<div className="container">
 				<div className="row">
@@ -54,16 +56,17 @@ class PokemonDetail extends Component {
 							<img className="m-auto d-block" src={selectedPokemon.sprites.front_default} />
 						</div>
 						<span className="d-block text-center mb-5 pokemon-name">{selectedPokemon.name}</span>
-						
-						<ul className="list-unstyled">
-							<li>Height: {selectedPokemon.height}</li>
-							<li>Weight: {selectedPokemon.weight}</li>
-							<li>Type: {selectedPokemon.types.map(type => <span>{type.name} </span>)}</li>
-							<li>Add To Bag: <button type="checkbox" checked={this.state.notInBag} onClick={() => this.togglePokemonInBag()}></button></li>
-						</ul>
+						<span className="text-heading">Stats</span>
+						<div className="pokemon-stats p-3 border rounded">
+							<ul className="list-unstyled">
+								<li><span className="key mt-2 mr-2">Height:</span><span className="value">{selectedPokemon.height}</span></li>
+								<li><span className="key mt-2 mr-2">Weight:</span><span className="value">{selectedPokemon.weight}</span></li>
+								<li><span className="key mt-2 mr-2">Type:</span> {selectedPokemon.types.map(type => <span>{type.name} </span>)}</li>
+								<li><span className="key mt-2 mr-2">In Bag:</span> <button className={`button-checkbox border rounded ${notInBag ? "" : "button-checkbox-checked"}`} onClick={() => this.togglePokemonInBag()}></button></li>
+							</ul>
+						</div>
 					</div>
 					<div className="col-9">
-
 					</div>
 				</div>
 			</div>

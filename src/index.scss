@@ -68,8 +68,25 @@ code {
 	}
 }
 
+.button-checkbox {
+	height: 20px;
+}
+
+.button-checkbox-checked {
+	background-color: $info-color;
+}
+
 .button-large {
 	font-size: $font-size-xlarge
+}
+
+.text-heading {
+	font-size: $font-size-xlarge;
+	font-style: italic;
+	border-bottom: 3px solid $primary-color;
+	display: block;
+	border-radius: 2px;
+	font-weight: bold;
 }
 
 .pokemon-name {
@@ -78,3 +95,22 @@ code {
 	color: $primary-text-color;
 	padding: 6px 12px;
 }
+
+.pokemon-status {
+	background-color: #2f2f2f;
+	font-style: italic;
+	color: $primary-text-color;
+	padding: 6px 12px;
+}
+
+.pokemon-stats {
+	.key {
+		font-size: $font-size-large;
+		font-weight: bold;
+	}
+
+	.value {
+		font-size: $font-size-normal;
+	}
+}
+
