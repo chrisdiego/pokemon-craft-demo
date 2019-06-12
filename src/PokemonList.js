@@ -29,7 +29,7 @@ class PokemonList extends Component {
 				{
 					this.state.pokemonResults.map((pokemon) => {
 						return (
-							<Pokemon className="col-3" pokemonData={pokemon} />
+							<Pokemon setSelectedPokemon={this.props.setSelectedPokemon} className="col-3" pokemonData={pokemon} />
 						);
 					})
 				}
