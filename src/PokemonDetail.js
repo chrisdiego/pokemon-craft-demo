@@ -25,16 +25,15 @@ class PokemonDetail extends Component {
 	          });
 	        }
 	      )
-
-	    const testBag = this.props.bag.every((pokemon) => pokemon.name != this.props.selectedPokemon.name);
-		this.setState({notInBag: testBag})
   	}
 
   	togglePokemonInBag() {
   		if (this.state.notInBag) {
   			this.props.addPokemonToBag(this.props.selectedPokemon)
+  			this.setState({notInBag: false})
   		} else {
   			this.props.removePokemonFromBag(this.props.selectedPokemon)
+  			this.setState({notInBag: true})
   		}
   	}
 

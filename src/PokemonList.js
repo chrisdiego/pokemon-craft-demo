@@ -57,9 +57,7 @@ class PokemonList extends Component {
 						pokemon.name.toLowerCase().includes(searchValue)
 						).map((pokemon) => {
 						return (
-							<div className="pokemon-filtered">
-								<Pokemon setSelectedPokemon={setSelectedPokemon} className="col-3" pokemonData={pokemon} />
-							</div>
+							<Pokemon setSelectedPokemon={setSelectedPokemon} className="col-3" pokemonData={pokemon} />
 						);
 					})
 				}

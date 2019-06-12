@@ -32,7 +32,7 @@ class Pokemon extends Component {
 	    <div className="pokemon-individual col-3 pb-5">
 	    	<Link to={`/pokemon/${pokemonData.name}`} onClick={() => setSelectedPokemon(pokemonInfo)}>
 		    	<div className="pokemon-container p-5 border rounded">
-			    	{this.state.loaded ? <img className="m-auto d-block pb-3 pokemon-image" src={pokemonInfo.sprites.front_default} /> : <div />}
+			    	{this.state.loaded ? <img className="m-auto d-block pb-3" src={pokemonInfo.sprites.front_default} /> : <div />}
 					<span className="text-center d-block">{pokemonData.name}</span>
 				</div>
 			</Link>
